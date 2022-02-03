@@ -1,0 +1,53 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<fstream.h>
+
+// Programmed by SAMAVi
+// http://samavi.info
+
+void setb_0(int *p);
+
+void main()
+{
+	const int n=501;
+	char ch,*text;
+	int ascii,*binary,i,t;
+	text=new char[n];
+	binary=new int[8];
+
+	//----- Prepare files --------------------------------------
+	ofstream input,output;
+	input.open("input.txt",ios::trunc);
+	output.open("output.txt",ios::trunc);
+
+	//-------------------- Get input text-----------------------
+	clrscr();
+	cout<<"Enter your text here to convert binary code <Up to the 500 ch>: "<<endl<<endl;
+	cin.getline(text,n-1);
+	cout<<"\n";
+
+	//----------------- Coding each charachter -----------------
+	for(t=0;t<strlen(text);t++)
+	{
+		ascii=text[t];
+		input<<text[t];
+		i=0;
+		setb_0(binary);
+		while(ascii>0){
+			if(ascii%2==0){
+				binary[i]=0;
+			}
+			else{
+				binary[i]=1;
+			}
+			ascii=ascii/2;
+			i++;
+		}
+		//----------------------------------------------------
+		//cout<<"\nBinary of "<<text[t]<<" is: ";
+		for(i=7;i>=0;i--)
+		{
+			cout<<binary[i]<<" ";
+			output<<binary[i];
+		}
