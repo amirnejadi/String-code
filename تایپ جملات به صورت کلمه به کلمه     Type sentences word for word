@@ -1,0 +1,33 @@
+#include<iostream.h>
+#include<string.h>
+#include<stdio.h>
+#include<dos.h>
+#include<conio.h>
+
+void main()
+{
+	clrscr();
+	char *text;
+	int n,i;
+	textmode(C80);
+	text=new char[101];
+	textcolor(2);
+	cprintf("\n>> Type your sentecses up to 200 charachter : ");
+	cout<<"\n\n";
+	cout<<">> ";
+	cin.get(text,100);
+	n=strlen(text);
+	cprintf("\n\n");
+	cout<<">> ";
+
+	for(i=0;i<n;i++)
+	{
+		cout<<text[i];
+		delay(200);
+	}
+	cout<<"\n\n"<<" SAMAVi ";
+
+
+	delete text;
+getch();
+}
