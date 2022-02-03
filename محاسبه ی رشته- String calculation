@@ -1,0 +1,12 @@
+#include<iostream.h>
+#include<conio.h>
+
+void main()
+{
+clrscr();
+char ch;int i=0;
+while(cin.get()!='\n')
+i++;
+cout<<i;
+getch();
+}
