@@ -1,0 +1,60 @@
+#include<stdio.h>
+#define max 100
+ 
+void create(char[], int*, int*);
+void display(char[], int*);
+void reverse(char[], int*, int*);
+ 
+void main(void)
+{
+int top= -1, length, min;
+min = (top+1);
+char stack[max];
+system("clear");
+printf("\n\tProgram that reverses a character array using stack\n");
+printf("\n\tEnter number of elements: Max 100\n");
+scanf("%d", &length);
+create(stack, &top, &length);
+reverse(stack, &top, &min);
+display(stack, &top);
+return;
+}
+ 
+void create(char stack[], int *top, int *length)
+{
+int check=0;
+char ch;
+printf("\n\tEnter elements: \n");
+while(check < (*length))
+{
+getchar();
+ch= getchar();
+(*top)= (*top)+1;
+stack[(*top)]= ch;
+check += 1;
+}
+return;
+}
+ 
+void display(char stack[], int *top)
+{
+int i=0;
+printf("\n\tReverse string is:\n");
+while( i<= (*top))
+{
+printf("\n\t%c", stack[i]);
+i++;
+}
+return;
+}
+ 
+void reverse(char stack[], int *top, int *min)
+{
+int i= (*top);
+while((*min) < i)
+{
+stack[(*min)] = (stack[i]+stack[(*min)]) - (stack[i]=stack[(*min)]);
+(*min)++, i--;
+}
+return;
+}
