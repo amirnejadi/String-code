@@ -1,0 +1,17 @@
+#include<iostream.h>
+
+void main(){
+int arr[10],arr2[10];
+for(int i=0;i<10;i++){
+cout<<"Please Enter Number("<<i+1<<"):";
+cin>>arr[i];
+}
+for(int j=0;j<=10;j++)arr2[j]=arr[9-j];
+cout<<"\nadadha baad az makous shodan\nchap khahand shod\n\n";
+for(int pri=0;pri<10;pri++)cout<<arr2[pri]<<"-";
+
+/*baraye stop kardane barname az motaghayer
+zir estefade kardam va estefade digei nadare*/
+
+cin>>arr[5];
+}
